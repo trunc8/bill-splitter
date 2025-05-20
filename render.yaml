@@ -1,0 +1,24 @@
+services:
+  # Backend API service
+  - type: web
+    name: bill-splitter-backend
+    env: python
+    buildCommand: cd backend && pip install -r requirements.txt
+    startCommand: cd backend && gunicorn app:app
+    envVars:
+      - key: FRONTEND_URL
+        value: https://bill-splitter-app.onrender.com
+      - key: DB_FILE
+        value: /var/lib/render/bill_splitter_db.json
+      - key: DEBUG
+        value: "False"
+
+  # Frontend static site
+  - type: web
+    name: bill-splitter-frontend
+    env: static
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: frontend/build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://bill-splitter-backend.onrender.com
