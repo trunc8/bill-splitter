@@ -211,6 +211,14 @@ function App() {
   return (
     <Container maxWidth="md" sx={{ py: 4 }}>
       <Paper elevation={3} sx={{ p: 4, borderRadius: 2 }}>
+        {/* Add an image above the title */}
+        <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
+          <img
+            src="/dessert.jpeg"
+            alt="Burma Restaurant Dessert"
+            style={{ maxWidth: '100%', height: 'auto' }}
+          />
+        </Box>
         <Typography variant="h3" align="center" gutterBottom sx={{ fontWeight: 'bold', color: '#1976d2' }}>
           Smart Bill Splitter
         </Typography>
@@ -401,7 +409,7 @@ function App() {
         )}
       </Paper>
       <Typography variant="body2" align="center" sx={{ mt: 3, color: 'text.secondary' }}>
-        Smart Bill Splitter © {new Date().getFullYear()}
+        Made with ❤️ by Siddharth
       </Typography>
       
       {/* Reset confirmation dialog */}

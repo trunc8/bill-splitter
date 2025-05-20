@@ -1,7 +1,7 @@
 {
   "name": "Bill Splitter App",
   "description": "A web application for splitting bills among friends",
-  "repository": "https://github.com/yourusername/bill-splitter",
+  "repository": "https://github.com/trunc8/bill-splitter",
   "keywords": ["python", "flask", "react", "bill-splitting"],
   "buildpacks": [
     {

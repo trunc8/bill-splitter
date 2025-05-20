@@ -20,7 +20,7 @@ Render.com provides a simple way to deploy both the frontend and backend with mi
    - Create a new repository on GitHub
    - Push your local project to GitHub:
      ```bash
-     git remote add origin https://github.com/yourusername/bill-splitter.git
+     git remote add origin https://github.com/trunc8/bill-splitter.git
      git branch -M main
      git push -u origin main
      ```
