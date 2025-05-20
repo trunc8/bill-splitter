@@ -56,7 +56,9 @@ function App() {
         setDishes(loadedDishes.length > 0 ? loadedDishes : [{ dish: '', price: '' }]);
         
         // Set people
-        setPeople(peopleResponse.data);
+        const rawPeople = peopleResponse.data;
+        const loadedPeople = Array.isArray(rawPeople) ? rawPeople : [];
+        setPeople(loadedPeople);
         
         // Set selections
         setSelections(selectionsResponse.data);
@@ -211,7 +213,9 @@ function App() {
   return (
     <Container maxWidth="md" sx={{ py: 4 }}>
       <Paper elevation={3} sx={{ p: 4, borderRadius: 2 }}>
-        {/* Add an image above the title */}
+        <Typography variant="h3" align="center" gutterBottom sx={{ fontWeight: 'bold', color: '#1976d2' }}>
+          Smart Bill Splitter
+        </Typography>
         <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
           <img
             src="/dessert.jpeg"
@@ -219,9 +223,6 @@ function App() {
             style={{ maxWidth: '100%', height: 'auto' }}
           />
         </Box>
-        <Typography variant="h3" align="center" gutterBottom sx={{ fontWeight: 'bold', color: '#1976d2' }}>
-          Smart Bill Splitter
-        </Typography>
         
         {/* Dishes section */}
         <Box sx={{ mb: 5, mt: 4 }}>
