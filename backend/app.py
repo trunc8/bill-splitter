@@ -1,5 +1,6 @@
 import os
 import json
+import sys
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 
@@ -7,7 +8,11 @@ app = Flask(__name__, static_folder='build')
 CORS(app, resources={r"/api/*": {"origins": os.environ.get("FRONTEND_URL", "*")}})
 
 # Data storage using JSON file as a simple database
-DB_FILE = os.environ.get('DB_FILE', 'bill_splitter_db.json')
+# On Heroku, use a directory that's writable
+if 'DYNO' in os.environ:  # Check if running on Heroku
+    DB_FILE = os.path.join('/tmp', 'bill_splitter_db.json')
+else:
+    DB_FILE = os.environ.get('DB_FILE', 'bill_splitter_db.json')
 
 # Initialize database
 def load_from_db():

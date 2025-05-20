@@ -1,0 +1,18 @@
+{
+  "name": "Bill Splitter App",
+  "description": "A web application for splitting bills among friends",
+  "repository": "https://github.com/yourusername/bill-splitter",
+  "keywords": ["python", "flask", "react", "bill-splitting"],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "env": {
+    "FRONTEND_URL": {
+      "description": "URL of the deployed frontend app",
+      "value": "https://your-frontend-url.netlify.app"
+    }
+  },
+  "success_url": "/"
+}

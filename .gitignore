@@ -41,7 +41,9 @@ frontend/build/
 .env
 
 # Database file - do not commit user data!
-*.json
+backend/bill_splitter_db.json
+# But allow sample and configuration files
+!sample_db.json
 !package.json
 !package-lock.json
 !manifest.json
