@@ -7,7 +7,7 @@ from flask_cors import CORS
 app = Flask(__name__, static_folder='build')
 # Updated CORS configuration with specific frontend URL
 CORS(app, resources={r"/api/*": {"origins": [
-    "https://comfy-cucurucho-b96a0a.netlify.app",  # Your Netlify frontend
+    "https://smart-bill-splitter.netlify.app",  # Your Netlify frontend
     "http://localhost:3000",  # For local development
     os.environ.get("FRONTEND_URL", "*")  # From environment variable (fallback)
 ]}})

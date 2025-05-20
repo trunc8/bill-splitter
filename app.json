@@ -11,7 +11,7 @@
   "env": {
     "FRONTEND_URL": {
       "description": "URL of the deployed frontend app",
-      "value": "https://comfy-cucurucho-b96a0a.netlify.app"
+      "value": "https://smart-bill-splitter.netlify.app"
     },
     "FLASK_ENV": {
       "description": "Environment for Flask application",
