@@ -14,7 +14,15 @@ import axios from 'axios';
 import './App.css';
 
 // Configure axios with proper error handling to prevent continuous refreshing
-axios.defaults.baseURL = process.env.REACT_APP_API_URL || 'http://127.0.0.1:5001';
+// Use the exact backend URL from environment variables
+const apiUrl = process.env.REACT_APP_API_URL || 'http://127.0.0.1:5001';
+axios.defaults.baseURL = apiUrl;
+console.log('Using API URL:', apiUrl); // Debug log to verify the URL
+
+// Add CORS headers to requests
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+axios.defaults.withCredentials = false;
+
 axios.interceptors.response.use(
   response => response,
   error => {

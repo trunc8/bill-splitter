@@ -51,7 +51,7 @@ heroku buildpacks:set heroku/python --app $APP_NAME
 # Set environment variables
 echo -e "${YELLOW}Setting environment variables${NC}"
 heroku config:set FLASK_ENV=production --app $APP_NAME
-heroku config:set FRONTEND_URL=https://your-frontend-url.netlify.app --app $APP_NAME
+heroku config:set FRONTEND_URL=https://comfy-cucurucho-b96a0a.netlify.app --app $APP_NAME
 
 # Deploy to Heroku
 echo -e "${YELLOW}Pushing to Heroku${NC}"

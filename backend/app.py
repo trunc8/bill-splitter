@@ -5,7 +5,12 @@ from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 
 app = Flask(__name__, static_folder='build')
-CORS(app, resources={r"/api/*": {"origins": os.environ.get("FRONTEND_URL", "*")}})
+# Updated CORS configuration with specific frontend URL
+CORS(app, resources={r"/api/*": {"origins": [
+    "https://comfy-cucurucho-b96a0a.netlify.app",  # Your Netlify frontend
+    "http://localhost:3000",  # For local development
+    os.environ.get("FRONTEND_URL", "*")  # From environment variable (fallback)
+]}})
 
 # Data storage using JSON file as a simple database
 # On Heroku, use a directory that's writable
